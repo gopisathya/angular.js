@@ -1,4 +1,30 @@
+// AngularJS bind syntax
+$http.get('url').then(angular.bind(this, 
+    function(response) { 
+        this.response = response; //use this (which is the bound context) 
+    });
+
+
+// Example
+
+
+
+function add(x, y) { 
+    return x + y; 
+}
+
+var add10To = angular.bind(this, add, 10);
+
+console.log(add10To(5));
+// outputs 15
+
+
+
+
+
+
 'use strict';
+
 
 /* We need to tell jshint what variables are being exported */
 /* global angular: true,
